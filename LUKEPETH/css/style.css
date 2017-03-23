@@ -1,0 +1,24 @@
+/* YOUR CUSTOM STYLES */
+.M{
+	width: 100%;
+}
+
+.movement{
+	margin-left: px;
+}
+a {
+	background: none;
+	list-style-type: none;
+	text-decoration: none;
+	transition: 0.8s ease-in;
+	color: #424242;
+	
+}
+a:hover{
+	background-color: lightslategray;
+	transition: 1.7s ease-out;
+	border-radius: 4px;
+}
+section{
+	height: 400px;
+}
