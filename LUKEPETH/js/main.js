@@ -1,7 +1,7 @@
-	$('a').click(function(e){
-		e.preventDefault();
-
-		$('html, body').animate({
-	 scrollTop:$($(this).attr('href')).offset().top
-		}, 500, linear);
-	});
+$(window).scroll(function(){
+    if ($(document).scrollTop() >50 ){
+        $('nav').addClass('shrink');
+    }else{
+        $('nav').removeClass('shrink');
+    }
+});
