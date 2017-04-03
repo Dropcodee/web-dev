@@ -5,3 +5,9 @@ $(window).scroll(function(){
         $('nav').removeClass('shrink');
     }
 });
+$('#fullpage').fullpage({
+    onLeave: function(index, nextIndex, direction){
+    var idx = Math.abs(index - nextIndex)*.1;
+    $.fn.fullpage.setScrollingSpeed(idx*700);
+    }
+})
