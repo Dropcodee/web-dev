@@ -6,6 +6,9 @@
 	background-color: aliceblue;
 	
 }
+.sec2{
+    height: auto;
+}
 hr.shadow {
     border: 0;
     height: 1px;
@@ -170,7 +173,7 @@ body,
 }
 .content{
     position: absolute;
-    top: 200px;
+    top: 220vh;
     left: 0;
     right: 0;
     font-weight: 1000px;
@@ -179,12 +182,37 @@ body,
 }
 #btn-btn{
     position: absolute;
-    top: 50vh;
+    top: 250vh;
     left: 0;
     right:0;
     margin-right: auto;
-    margin-left:92vh;
+    margin-left:85vh;
     
+}
+#btn-btn-log{
+    position: absolute;
+    top: 350vh;
+    left: 0;
+    right:0;
+    margin-right: auto;
+    margin-left:85vh;
+    
+}
+.content-login{
+    position: absolute;
+    top: 320vh;
+    left: 0;
+    right: 0;
+    font-weight: 1000px;
+    font-size: 32px;
+    text-align: center;
+    color: #ddd;
+}
+#imgcontain img{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
 }
 .topl{
 bottom: 1000px;
@@ -196,7 +224,7 @@ bottom: 1000px;
 }
 .sec3{
     background-color: #3F51B5;
-    height: 800px;
+    height: auto;
 
 }
 .cards{
@@ -208,7 +236,7 @@ bottom: 1000px;
 }
 .sec8{
     background-color: #2196F3;
-    height: 1000px;
+    height: auto;
 }
 .login-form{
 background: #eee;
@@ -261,6 +289,25 @@ input[type="password"]{
 }
 .fa{
     position: absolute;
- top: 15px;
- left: 150px;
+ right: 5px;
+  top: 16px;
+  font-size: 16px;
+  color: #808080;
 }
+
+#wwwcol{
+    width: 800px;
+    background: #3F51B5;
+    margin: 0 auto;
+    min-height: 400px;
+    margin-top: 40px;
+    border:1px solid  #999;
+    border-bottom: 3px solid;
+    border-radius:5px;                               ;
+}
+ #posted{
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border:1px solid #ccc;
+ }

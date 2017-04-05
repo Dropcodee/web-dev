@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<title> LUKEPERTH LOGIN </title>
+<link rel="stylesheet" type="text/css" href="css/login.css"/>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    </head>
+    <body>
+<div class="login__forn">
+<div class="login__face">
+<img src="img/avatar5.png" />
+</div>
+<section class="forn">
+<form method="POST" action="#" >
+    <div class="input uname">
+        <input type="text" id="username" placeholder="Username" required/>
+        <i class="fa fa-user"></i>
+          </div>
+          <div class="input passwo">
+<input type="password" id="password" placeholder="Your Password" required/>
+<i class="fa fa-lock"></i>
+          </div><br />
+          <div>
+          <input type="submit" id="login" value="log in" />
+          </div><br /><br />
+          <hr class="shadow"><br />
+
+         <p class="error-msg" style="float: right;"> Wrong Credential <a id="links" href="#">Lost Your Password</a></p>
+          
+          <p style="float: right;"> Not a member? <a id="links" href="registerForm.html"> SIGN UP</a></p>
+
+          
+</form>
+
+</section>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#login").click(function(){
+        if($("#username").val() == ""){
+    $(".input").addClass("error");
+        }
+        if($("#password").val() == ""){
+$(".passwo").addClass("error");
+        }
+ })
+    $(".input").click(function(){
+        $(".input").removeClass("error");
+    })
+})
+</script>
+
+    </body>
