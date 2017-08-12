@@ -1,0 +1,95 @@
+<div class="landing-form">
+   <div class="contact-form">
+  <strong id="text-1">CONTACT US !</strong>
+  <strong id="text-2">OR</strong>
+  <strong id="text-2">BUY NOW !</strong>
+    <form class="" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+      <fieldset >
+
+      <input type="text" name="Uname" value="<?= $name?>" placeholder="YOUR NAME">
+      <span class="error"><?= $name_error?></span>
+
+    </fieldset>
+
+<fieldset>
+
+
+      <input type="text" name="Uemail" value="<?= $email?>" placeholder="YOUR EMAIL">
+      <span class="error"><?= $email_error  ?></span>
+</fieldset>
+
+<fieldset>
+
+      <input type="text" name="Uphone" value="<?= $phone?>" placeholder="YOUR PHONE NUMBER">
+  <span class="error"><?= $phone_error ?></span>
+
+</fieldset>
+      <button type="submit" name="submit" class="btn-xx">Submit</button>
+    </form>
+<div class=""><?= $success ?></div>
+  </div>
+ </div>
+ </div>
+ 
+ // THE PHP CODE NOT COMPLETE FOR NOW
+ 
+ <?php
+ 
+// ASIGNING THE VARIABLES TO AN EMPTY STRINGS...
+
+$name_error = $email_error = $phone_error = "";
+$name = $email = $phone = $success = "";
+
+// USING THE METHOD POST TO SEND DATA AND ALSO THE VALIDATION
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["Uname"])) {
+     $name_error = "Name Required";
+  }else {
+    $name = test_input($_POST["Uname"]);
+    if (!preg_match("/^[a-zA-Z]*$/",$name)) {
+      $name_error = "Letters Only";
+    }
+  }
+
+  if (empty($_POST["Uemail"])) {
+     $email_error = "Email Required";
+  }else {
+    $email = test_input($_POST["Uemail"]);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {    // I NEED GOOD EMAIL VALIDATION METHOD HELP!!!
+      $email_error = "Invalid Format";
+    }
+  }
+  if (empty($_POST["Uphone"])) {
+     $phone_error = "Phone Required";
+  }else {
+    $phone = test_input($_POST["Uphone"]);
+    if (!preg_match($phone,)) {              // I NEED A PHONE NUMBER VALIDATION HELP !!!
+      $phone_error = "Invalid Format";
+    }
+  }
+  
+  // MAIN PROBLEM OF THE CODE, I NEED IT TO SEND EMAILS TO THE CLIENTS HELP ME HERE!!!
+  
+  if ($name_error == '' && $email_error == '' && $phone_error == '') {
+    $message_body = '';
+    unset($_POST['submit']);
+    foreach ($_POST as $key => $value) {
+      $message_body .= "$key: $value\n";
+    }
+    $to = 'kcnbearing2007@yahoo.com' && 'cyrilnsofor@yahoo.com' && 'primtech.co@gmail.com'; // I NEED IT TO SEND TO MULTIPLE EMAILS HELP !!!
+    $subject = 'NEW CUSTOMER CONTACT';
+    if (mail($to, $subject, $name, $phone, $email)) {
+      $success = "THANK YOU FOR YOUR PATIENCE, YOU WILL BE CONTACTED SHORTLY";
+      $name = $email = $phone = "";
+    }
+  }
+}
+
+function test_input($data){
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+ ?>
